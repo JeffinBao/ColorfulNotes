@@ -1,0 +1,159 @@
+<resources>
+    <string name="app_name">ColorfulNotes</string>
+
+    <array name="init_note_book_item_list">
+        <item>Default Notebook</item>
+        <item>Work</item>
+        <item>Learn</item>
+        <item>Travel</item>
+        <item>Interesting Things</item>
+        <item>Social Science</item>
+        <item>Economy</item>
+    </array>
+
+    <array name="drawer_item_list">
+        <item>Bind Evernote</item>
+        <item>Sync All Notes</item>
+        <item>Setting</item>
+        <item>About</item>
+    </array>
+
+    <array name="about_item_list">
+        <item>Like ColorfulNotes</item>
+        <item>Sponsor Developer</item>
+        <item>Contact Developer</item>
+    </array>
+
+    <array name="reset_question_list">
+        <item>What\'s the name of your father?</item>
+        <item>What\'s the name of your mother\'s name?</item>
+        <item>What\'s the name of your junior middle school?</item>
+        <item>What\'s the name of your high school?</item>
+        <item>What\'s the name of your college?</item>
+        <item>Who\'s your first boss?</item>
+        <item>What\'s the name of your first company?</item>
+    </array>
+
+    <string name="default_note_book">Default Notebook</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="give_up">Abandon</string>
+    <string name="save">Save</string>
+    <string name="turn_on_network">Please turn on network for better locating performance</string>
+    <string name="about">About</string>
+    <string name="encouragement_random_money">Sponsor developer if you like</string>
+    <string name="install_mail_app_first">Please install mail app first</string>
+    <string name="setting">Setting</string>
+
+    <!-- note book menu more -->
+    <string name="note_book_rename">Rename Notebook</string>
+    <string name="note_book_delete">Delete Notebook</string>
+    <string name="note_book_delete_confirm">Are you sure to delete this notebook?</string>
+    <string name="note_book_new">New Notebook</string>
+    <string name="note_book_title_input_hint">Please type in name</string>
+    <string name="note_book_name_should_not_be_null">Notebook name should not be null</string>
+    <string name="note_book_name_should_note_be_same">This notebook is already exist</string>
+
+    <!-- note display menu more -->
+    <string name="note_display_edit">Edit Note</string>
+    <string name="note_display_delete">Delete Note</string>
+
+    <!-- note related -->
+    <string name="note_create_time">Create Time: %1$s</string>
+    <string name="note_last_update_time">Last Updated: %1$s</string>
+    <string name="note_create_location">Create Location: %1$s</string>
+    <string name="note_create_time_hint">Create Time:</string>
+    <string name="note_last_update_time_hint">Last Updated:</string>
+    <string name="note_create_location_hint">Create Location:</string>
+    <string name="note_set_create_location">Click to setup location</string>
+    <string name="note_view">View Note</string>
+    <string name="note_edit">Edit Note</string>
+    <string name="note_create">Create Note</string>
+    <string name="note_title_hint">Please type in note title</string>
+    <string name="note_content_hint">Please type in note content</string>
+    <string name="note_title_length_exceed_20">Length of note title should not exceed 20</string>
+    <string name="note_delete_confirm">Are you sure to delete this note?</string>
+    <string name="note_not_save_confirm">Abandon unsaved modification?</string>
+    <string name="note_saved">Note has been saved to %1$s</string>
+    <string name="note_moved_to_other_notebook">Note has been moved to Notebook %1$s</string>
+    <string name="note_deleted">Note has been deleted</string>
+
+    <string name="choose_note_book">Select Notebook</string>
+
+    <string name="action_note_done">Done</string>
+    <string name="action_note_sync">Sync this note</string>
+    <string name="action_note_detail">Details</string>
+    <string name="action_note_delete">Delete</string>
+
+    <!-- evernote related -->
+    <string name="evernote_unbind_hint">Unbind: %1$s</string>
+    <string name="evernote_sync_success">Sync successfully</string>
+    <string name="evernote_auth_expired">Evernote auth expired</string>
+    <string name="evernote_permission_denied">Evernote permission denied</string>
+    <string name="evernote_quota_reached">Evernote quota reached</string>
+    <string name="evernote_rate_limit_reached">The operation is too frequent</string>
+    <string name="evernote_sync_failed">Sync failed</string>
+    <string name="evernote_no_note_in_db">Please create at least one note</string>
+    <string name="evernote_sync_now">Sync now</string>
+    <string name="evernote_please_bind">Please bind to Evernote first</string>
+    <string name="evernote_login_success">Evernote login successfully</string>
+    <string name="evernote_login_fail">Evernote login failed</string>
+    <string name="evernote_at_least_one_note">Please create note first</string>
+
+    <!-- preferences related -->
+    <string name="shared_preferences">preferences</string>
+    <string name="evernote_user_name">evernote_user_name</string>
+    <string name="passcode_availability_preference">passcode_availbility</string>
+    <string name="passcode_reset_question_preference">passcode_reset_question</string>
+    <string name="passcode_reset_answer_preference">passcode_reset_answer</string>
+    <string name="passcode_reset_has_shown_for_once">passcode_reset_shown</string>
+
+    <!-- passcode related -->
+    <string name="passcode_digit_0">0</string>
+    <string name="passcode_digit_1">1</string>
+    <string name="passcode_digit_2">2</string>
+    <string name="passcode_digit_3">3</string>
+    <string name="passcode_digit_4">4</string>
+    <string name="passcode_digit_5">5</string>
+    <string name="passcode_digit_6">6</string>
+    <string name="passcode_digit_7">7</string>
+    <string name="passcode_digit_8">8</string>
+    <string name="passcode_digit_9">9</string>
+    <string name="passcode_forget">Forget</string>
+    <string name="passcode_validation">Enter passcode to access your notes</string>
+    <string name="passcode_validation_wrong">Passcode is wrong,please enter again</string>
+    <string name="passcode_init_enter">Enter digits to create passcode</string>
+    <string name="passcode_init_enter_again">Enter same digits again to confirm</string>
+    <string name="passcode_change_enter_old">Enter old passcode to validate</string>
+    <string name="passcode_change_enter_old_wrong">Wrong passcode</string>
+    <string name="passcode_change_enter_new">Enter new passcode</string>
+    <string name="passcode_change_enter_new_again">Enter new passcode again to confirm</string>
+    <string name="passcode_not_match_as_last_input">Please enter same digits as last input</string>
+    <string name="passcode_change_success">Passcode has been changed successfully</string>
+
+    <!-- passcode reset related -->
+    <string name="passcode_reset_title">Passcode Reset</string>
+    <string name="passcode_reset_question_title">Question</string>
+    <string name="passcode_reset_answer_title">Answer</string>
+    <string name="passcode_reset_edit_text_hint">Please type in answer</string>
+    <string name="passcode_reset_question_example">What\'s the name of your father?</string>
+    <string name="fragment_passcode_reset_title">Select Question</string>
+    <string name="passcode_reset_question_not_set">Give up setting reset question?</string>
+    <string name="passcode_reset_question_set_successfully">Reset question set successfully</string>
+    <string name="passcode_reset_successfully">Passcode reset successfully</string>
+    <string name="passcode_reset_question_validation_fail">Answer not match</string>
+
+    <!-- preference setting related -->
+    <string name="preference_passcode_setting">Passcode Setting</string>
+    <string name="preference_passcode_open_or_not_title">Passcode Controller</string>
+    <string name="preference_passcode_open">Current Status: Open</string>
+    <string name="preference_passcode_close">Current Status: Closed</string>
+    <string name="preference_passcode_init_title">Init Passcode</string>
+    <string name="preference_passcode_change_title">Change Passcode</string>
+    <string name="preference_passcode_find_title">Reset Passcode</string>
+
+    <string name="preference_passcode_setting_key">pref_passcode_setting</string>
+    <string name="preference_passcode_open_or_not">pref_passcode_on_or_not</string>
+    <string name="preference_passcode_change">pref_passcode_change</string>
+    <string name="preference_passcode_find">pref_passcode_find</string>
+</resources>

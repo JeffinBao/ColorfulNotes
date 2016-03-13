@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+    <item
+        android:id="@+id/note_activity_done"
+        android:icon="@mipmap/ic_action_done"
+        android:title="@string/action_note_done"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/note_activity_sync_note"
+        android:title="@string/action_note_sync"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/note_activity_detail"
+        android:title="@string/action_note_detail"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/note_activity_delete"
+        android:title="@string/action_note_delete"
+        app:showAsAction="never" />
+
+
+</menu>

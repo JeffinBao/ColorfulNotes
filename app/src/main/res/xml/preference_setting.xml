@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:key="@string/preference_passcode_setting_key"
+        android:layout="@layout/preference_category_title"
+        android:title="@string/preference_passcode_setting" >
+
+        <SwitchPreference
+            android:key="@string/preference_passcode_open_or_not"
+            android:title="@string/preference_passcode_open_or_not_title"
+            android:summaryOn="@string/preference_passcode_open"
+            android:summaryOff="@string/preference_passcode_close"
+            android:defaultValue="false" />
+
+        <Preference
+            android:key="@string/preference_passcode_change"
+            android:title="@string/preference_passcode_change_title"
+            android:layout="@layout/preference_passcode_action_layout" />
+
+        <Preference
+            android:key="@string/preference_passcode_find"
+            android:title="@string/preference_passcode_find_title"
+            android:layout="@layout/preference_passcode_action_layout" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

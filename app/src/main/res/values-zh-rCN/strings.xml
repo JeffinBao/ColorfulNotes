@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">多彩笔记</string>
+
+    <array name="init_note_book_item_list">
+        <item>默认笔记本</item>
+        <item>工作</item>
+        <item>学习</item>
+        <item>旅行</item>
+        <item>有趣</item>
+        <item>社会科学</item>
+        <item>经济投资</item>
+    </array>
+
+    <array name="drawer_item_list">
+        <item>绑定印象笔记</item>
+        <item>同步所有笔记</item>
+        <item>设置</item>
+        <item>关于</item>
+    </array>
+
+    <array name="about_item_list">
+        <item>给应用点赞</item>
+        <item>随意打赏</item>
+        <item>联系作者吐槽</item>
+    </array>
+
+    <array name="reset_question_list">
+        <item>父亲的名字?</item>
+        <item>母亲的名字?</item>
+        <item>你初中学校的名字?</item>
+        <item>你高中学校的名字?</item>
+        <item>你大学学校的名字?</item>
+        <item>你工作第一个主管是谁?</item>
+        <item>你工作第一个公司的名字?</item>
+    </array>
+
+    <string name="default_note_book">默认笔记本</string>
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+    <string name="give_up">放弃</string>
+    <string name="save">保存</string>
+    <string name="turn_on_network">为了定位的准确性,请打开网络</string>
+    <string name="about">关于</string>
+    <string name="encouragement_random_money">觉得不错，随意打赏.</string>
+    <string name="install_mail_app_first">请先安装邮箱应用!</string>
+    <string name="setting">设置</string>
+
+    <!-- note book menu more -->
+    <string name="note_book_rename">重命名笔记本</string>
+    <string name="note_book_delete">删除笔记本</string>
+    <string name="note_book_delete_confirm">确定删除该条笔记本?</string>
+    <string name="note_book_new">新建笔记本</string>
+    <string name="note_book_title_input_hint">请输入名字</string>
+    <string name="note_book_name_should_not_be_null">笔记本名字不能为空</string>
+    <string name="note_book_name_should_note_be_same">该笔记本已经存在</string>
+
+    <!-- note display menu more -->
+    <string name="note_display_edit">编辑笔记</string>
+    <string name="note_display_delete">删除笔记</string>
+
+    <!-- note related -->
+    <string name="note_create_time">创建时间: %1$s</string>
+    <string name="note_last_update_time">最后更新: %1$s</string>
+    <string name="note_create_location">创建地点: %1$s</string>
+    <string name="note_create_time_hint">创建时间:</string>
+    <string name="note_last_update_time_hint">最后更新:</string>
+    <string name="note_create_location_hint">创建地点:</string>
+    <string name="note_set_create_location">点击进行地点设置</string>
+    <string name="note_view">查看笔记</string>
+    <string name="note_edit">编辑笔记</string>
+    <string name="note_create">创建笔记</string>
+    <string name="note_title_hint">请输入标题</string>
+    <string name="note_content_hint">请输入您的笔记内容</string>
+    <string name="note_title_length_exceed_20">标题长度不能超过20个字符喔^_^</string>
+    <string name="note_delete_confirm">确定删除该条笔记?</string>
+    <string name="note_not_save_confirm">放弃未保存的修改吗?</string>
+    <string name="note_saved">笔记已保存到%1$s</string>
+    <string name="note_moved_to_other_notebook">笔记已移动到%1$s</string>
+    <string name="note_deleted">笔记已删除</string>
+
+    <string name="choose_note_book">选择笔记本</string>
+
+    <string name="action_note_done">完成</string>
+    <string name="action_note_sync">同步该条笔记</string>
+    <string name="action_note_detail">详细信息</string>
+    <string name="action_note_delete">删除</string>
+
+    <!-- evernote related -->
+    <string name="evernote_unbind_hint">解绑: %1$s</string>
+    <string name="evernote_sync_success">笔记同步成功</string>
+    <string name="evernote_auth_expired">印象笔记授权过期,请重新授权</string>
+    <string name="evernote_permission_denied">没有权限</string>
+    <string name="evernote_quota_reached">当月流量已达上限</string>
+    <string name="evernote_rate_limit_reached">同步操作过于频繁,请稍后重试</string>
+    <string name="evernote_sync_failed">同步失败</string>
+    <string name="evernote_no_note_in_db">还未创建笔记,请至少创建一条再重试</string>
+    <string name="evernote_sync_now">正在同步笔记到印象笔记</string>
+    <string name="evernote_please_bind">请先绑定印象笔记账号,再进行同步操作</string>
+    <string name="evernote_login_success">印象笔记登录成功</string>
+    <string name="evernote_login_fail">印象笔记登录失败</string>
+    <string name="evernote_at_least_one_note">请先创建至少1条笔记</string>
+
+    <!-- preferences related -->
+    <string name="shared_preferences">preferences</string>
+    <string name="evernote_user_name">evernote_user_name</string>
+    <string name="passcode_availability_preference">passcode_availbility</string>
+    <string name="passcode_reset_question_preference">passcode_reset_question</string>
+    <string name="passcode_reset_answer_preference">passcode_reset_answer</string>
+    <string name="passcode_reset_has_shown_for_once">passcode_reset_shown</string>
+
+    <!-- passcode related-->
+    <string name="passcode_digit_0">0</string>
+    <string name="passcode_digit_1">1</string>
+    <string name="passcode_digit_2">2</string>
+    <string name="passcode_digit_3">3</string>
+    <string name="passcode_digit_4">4</string>
+    <string name="passcode_digit_5">5</string>
+    <string name="passcode_digit_6">6</string>
+    <string name="passcode_digit_7">7</string>
+    <string name="passcode_digit_8">8</string>
+    <string name="passcode_digit_9">9</string>
+    <string name="passcode_forget">忘记密码</string>
+    <string name="passcode_validation">输入密码进入您的笔记</string>
+    <string name="passcode_validation_wrong">密码错误,请再输入一次</string>
+    <string name="passcode_init_enter">设置密码</string>
+    <string name="passcode_init_enter_again">请再输入一次确认</string>
+    <string name="passcode_change_enter_old">请输入旧密码</string>
+    <string name="passcode_change_enter_old_wrong">旧密码错误,请再输入一次</string>
+    <string name="passcode_change_enter_new">请输入新密码</string>
+    <string name="passcode_change_enter_new_again">请再输入一次确认新密码</string>
+    <string name="passcode_not_match_as_last_input">密码不一致</string>
+    <string name="passcode_change_success">密码修改成功</string>
+
+    <!-- passcode reset related -->
+    <string name="passcode_reset_title">密码重置</string>
+    <string name="passcode_reset_question_title">问题</string>
+    <string name="passcode_reset_answer_title">答案</string>
+    <string name="passcode_reset_edit_text_hint">请输入问题答案</string>
+    <string name="passcode_reset_question_example">父亲的名字?</string>
+    <string name="fragment_passcode_reset_title">选择问题</string>
+    <string name="passcode_reset_question_not_set">放弃设置找回密码问题?</string>
+    <string name="passcode_reset_question_set_successfully">找回密码问题设置成功</string>
+    <string name="passcode_reset_successfully">密码重置成功</string>
+    <string name="passcode_reset_question_validation_fail">答案不匹配</string>
+
+    <!-- preference setting related -->
+    <string name="preference_passcode_setting">密码设置</string>
+    <string name="preference_passcode_open_or_not_title">密码功能启动器</string>
+    <string name="preference_passcode_open">当前状态: 开启</string>
+    <string name="preference_passcode_close">当前状态: 关闭</string>
+    <string name="preference_passcode_init_title">设置密码</string>
+    <string name="preference_passcode_change_title">修改密码</string>
+    <string name="preference_passcode_find_title">找回密码</string>
+
+    <string name="preference_passcode_setting_key">pref_passcode_setting</string>
+    <string name="preference_passcode_open_or_not">pref_passcode_on_or_not</string>
+    <string name="preference_passcode_change">pref_passcode_change</string>
+    <string name="preference_passcode_find">pref_passcode_find</string>
+</resources>

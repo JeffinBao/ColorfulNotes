@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/note_layout"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="96dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginTop="8dp"
+    android:background="@drawable/ripple_material_light_selector">
+
+    <View
+        android:id="@+id/note_line_top"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black_transparency_12" />
+
+    <RelativeLayout
+        android:id="@+id/note_title_plus_more"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/note_line_top"
+        android:layout_marginTop="4dp">
+
+        <TextView
+            android:id="@+id/note_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="标题"
+            android:textSize="18sp"
+            android:textColor="@color/black_transparency_87"/>
+
+        <ImageView
+            android:id="@+id/note_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_more_normal_grey"
+            android:background="@drawable/ripple_material_light_borderless_selector"/>
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/note_content_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/note_title_plus_more"
+        android:layout_marginLeft="8dp"
+        android:maxLines="2"
+        android:text="内容提示"
+        android:textSize="14sp"
+        android:textColor="@color/black_transparency_87"/>
+
+
+    <TextView
+        android:id="@+id/note_last_update_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/note_content_hint"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_gravity="left"
+        android:textSize="12sp"
+        android:textColor="@color/black_transparency_54"/>
+
+    <TextView
+        android:id="@+id/note_create_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/note_last_update_time"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="2dp"
+        android:layout_gravity="left"
+        android:textSize="12sp"
+        android:textColor="@color/black_transparency_54"
+        android:visibility="gone"/>
+
+    <View
+        android:id="@+id/note_line_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/black_transparency_12" />
+
+</RelativeLayout>

@@ -1,0 +1,90 @@
+apply plugin: 'com.android.application'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        applicationId "com.jeffinbao.colorfulnotes"
+        minSdkVersion 14
+        targetSdkVersion 22
+        versionCode 100
+        versionName "1.0.0"
+
+        //umeng default channel
+        manifestPlaceholders = [UMENG_CHANNEL_VALUE: "cn_test"]
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file(System.getProperty("user.home") + "/.android/debug.keystore")
+        }
+
+        release {
+            storeFile file(ANDROID_KEY_STORE_FILE_PATH)
+            storePassword ANDROID_KEY_STORE_PASSWORD
+            keyAlias ANDROID_KEY_ALIAS
+            keyPassword ANDROID_KEY_PASSWORD
+        }
+    }
+    buildTypes {
+        debug {
+            buildConfigField("boolean", "LOG_DEBUG", "true")
+            signingConfig signingConfigs.debug
+        }
+        release {
+            buildConfigField("boolean", "LOG_DEBUG", "true")
+            zipAlignEnabled true
+            minifyEnabled false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    def outputFile = output.outputFile
+                    if (null != outputFile && outputFile.name.endsWith('.apk')) {
+                        def fileName = "CN_V${defaultConfig.versionName}_${variant.productFlavors[0].name}.apk"
+                        output.outputFile = new File(outputFile.parent, fileName)
+                    }
+                }
+            }
+        }
+    }
+
+    productFlavors {
+        cn_test {}
+        cn_wandoujia {}
+        cn_smartisan {}
+        cn_xiaomi {}
+        cn_huawei {}
+        cn_meizu {}
+        cn_googleplay {}
+    }
+
+    productFlavors {
+        productFlavors.all { flavor ->
+            flavor.manifestPlaceholders = [UMENT_CHANNEL_VALUE: name]
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:22.2.1'
+    compile 'com.android.support:recyclerview-v7:22.2.1'
+    compile 'com.android.support:cardview-v7:22.2.1'
+    compile 'com.android.support:design:22.2.1'
+    compile 'de.greenrobot:eventbus:3.0.0-beta1'
+    compile 'com.evernote:android-sdk:2.0.0-RC3'
+    compile 'com.umeng.analytics:analytics:latest.integration'
+}

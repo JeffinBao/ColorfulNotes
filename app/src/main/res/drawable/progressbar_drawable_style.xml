@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@android:id/background" >
+        <shape>
+            <gradient
+                android:startColor="@color/material_deep_teal_200"
+                android:centerColor="@color/material_deep_teal_200"
+                android:endColor="@color/material_deep_teal_200"
+                android:angle="90" />
+        </shape>
+    </item>
+
+    <item android:id="@android:id/secondaryProgress" >
+        <clip>
+            <shape>
+                <gradient
+                    android:startColor="@color/material_deep_teal_500"
+                    android:centerColor="@color/material_deep_teal_500"
+                    android:endColor="@color/material_deep_teal_500"
+                    android:angle="90" />
+            </shape>
+
+        </clip>
+    </item>
+
+    <item android:id="@android:id/progress" >
+        <clip>
+            <shape>
+                <gradient
+                    android:startColor="@color/material_deep_teal_500"
+                    android:centerColor="@color/material_deep_teal_500"
+                    android:endColor="@color/material_deep_teal_500"
+                    android:angle="90" />
+            </shape>
+        </clip>
+    </item>
+
+</layer-list>

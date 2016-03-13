@@ -1,0 +1,61 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:itemTextAppearance">@style/menuTextStyle</item>
+        <item name="android:windowAnimationStyle">@style/ActivitySlideInAndOutAnimation</item>
+    </style>
+
+    <style name="menuTextStyle">
+        <item name="android:textColor">@color/black_transparency_54</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="NoteDialogFragmentStyle" parent="@style/Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@drawable/fragment_note_detail_background</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowAnimationStyle">@style/DialogSlideInAndOutAnimation</item>
+    </style>
+
+    <style name="ActivitySlideInAndOutAnimation" parent="android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_bottom</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_bottom</item>
+    </style>
+
+    <style name="DialogSlideInAndOutAnimation" parent="android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/slide_in_top</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_top</item>
+    </style>
+
+    <style name="CardViewStyle" parent="android:Widget.TextView">
+        <item name="android:foreground">@drawable/ripple_material_light_selector</item>
+    </style>
+
+    <style name="ProgressBarStyle" parent="@style/Widget.AppCompat.ProgressBar.Horizontal" >
+        <item name="android:progressDrawable">@drawable/progressbar_drawable_style</item>
+    </style>
+    
+    <style name="PasscodeDigitTextViewStyle" >
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/black_transparency_54</item>
+        <item name="android:textSize">42sp</item>
+        <item name="android:background">@drawable/ripple_material_light_non_transparent_borderless_selector</item>
+    </style>
+
+    <style name="PasscodeStarStyle" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:src">@mipmap/passcode_star_unselected</item>
+        <item name="android:scaleType">center</item>
+    </style>
+
+</resources>

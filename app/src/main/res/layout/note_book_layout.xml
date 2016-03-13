@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    style="@style/CardViewStyle"
+    android:id="@+id/note_book_card_view"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginTop="8dp"
+    android:orientation="horizontal"
+    android:elevation="2dp"
+    card_view:cardCornerRadius="2dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="8dp"
+        android:layout_gravity="start|center">
+
+        <TextView
+            android:id="@+id/note_book_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black_transparency_54"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/note_book_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black_transparency_54"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/note_book_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|center"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:src="@mipmap/ic_more_normal_grey"
+        android:background="@drawable/ripple_material_light_borderless_selector"/>
+
+</android.support.v7.widget.CardView>
