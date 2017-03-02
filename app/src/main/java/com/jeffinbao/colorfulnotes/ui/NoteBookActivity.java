@@ -45,7 +45,6 @@ import com.jeffinbao.colorfulnotes.ui.view.PasscodeView;
 import com.jeffinbao.colorfulnotes.utils.DatabaseUtil;
 import com.jeffinbao.colorfulnotes.utils.PreferenceUtil;
 import com.jeffinbao.colorfulnotes.utils.SoftKeyboardUtil;
-import com.umeng.analytics.AnalyticsConfig;
 import com.umeng.analytics.MobclickAgent;
 
 import net.tsz.afinal.FinalDb;
@@ -113,7 +112,7 @@ public class NoteBookActivity extends BaseActivity implements BaseRecyclerViewAd
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         MobclickAgent.openActivityDurationTrack(false);
-        AnalyticsConfig.enableEncrypt(true);
+//        AnalyticsConfig.enableEncrypt(true);
     }
 
     @Override
@@ -456,7 +455,7 @@ public class NoteBookActivity extends BaseActivity implements BaseRecyclerViewAd
         dialog.show();
     }
 
-    private void showAddNewOrEditNoteBookDialog(final Context context, @StringRes int id, @Nullable final NoteBook values, final int position) {
+    private void showAddNewOrEditNoteBookDialog(final Context context, @StringRes final int id, @Nullable final NoteBook values, final int position) {
         SoftKeyboardUtil.showKeyboard(context);
 
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
@@ -472,12 +471,23 @@ public class NoteBookActivity extends BaseActivity implements BaseRecyclerViewAd
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 SoftKeyboardUtil.hideKeyboard(context, inputName);
-
-                if (inputName.getText().length() > 0 && !isNoteBookNameExist(inputName.getText().toString(), values)) {
+                
+                String inputNameText = inputName.getText().toString();
+                int inputNameLength = inputName.getText().length();
+                if (inputNameLength > 0 && !isNoteBookNameExist(inputNameText, values)) {
                     if (null != values) {
                         //rename notebook situation
-                        if (!values.getName().equals(inputName.getText().toString())) {
-                            values.setName(inputName.getText().toString());
+                        if (!values.getName().equals(inputNameText)) {
+                            // update every note's noteBookName
+                            List<Note> noteList = db.findAllByWhere(Note.class, "noteBookName='" + values.getName() + "'");
+                            for (int i = 0; i < noteList.size(); i++) {
+                                Note note = noteList.get(i);
+                                note.setNoteBookName(inputNameText);
+                                db.update(note);
+                            }
+                            
+                            // update noteBook's name
+                            values.setName(inputNameText);
                             db.update(values);
 
                             noteBookList.set(position, values);
@@ -487,17 +497,17 @@ public class NoteBookActivity extends BaseActivity implements BaseRecyclerViewAd
                         //create notebook situation
                         NoteBook noteBook = new NoteBook();
                         noteBook.setCount(0);
-                        noteBook.setName(inputName.getText().toString());
+                        noteBook.setName(inputNameText);
                         db.saveBindId(noteBook);
 
                         noteBookList.add(noteBook);
                         noteBookAdapter.notifyDataSetChanged();
                     }
 
-                } else if (inputName.getText().length() == 0) {
+                } else if (inputNameLength == 0) {
                     Toast.makeText(getApplicationContext(), R.string.note_book_name_should_not_be_null, Toast.LENGTH_SHORT).show();
 
-                } else if (isNoteBookNameExist(inputName.getText().toString(), values)) {
+                } else if (isNoteBookNameExist(inputNameText, values)) {
                     Toast.makeText(getApplicationContext(), R.string.note_book_name_should_note_be_same, Toast.LENGTH_SHORT).show();
                 }
 
