@@ -11,9 +11,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Toast;
 
+import com.jeffinbao.colorfulnotes.CApplication;
 import com.jeffinbao.colorfulnotes.R;
 import com.jeffinbao.colorfulnotes.ui.adapter.AboutListAdapter;
 import com.jeffinbao.colorfulnotes.ui.adapter.BaseListAdapter;
+import com.jeffinbao.colorfulnotes.utils.OSUtil;
 import com.umeng.analytics.MobclickAgent;
 
 import java.util.Arrays;
@@ -94,9 +96,16 @@ public class AboutActivity extends BaseActivity implements BaseListAdapter.OnIte
                 contactAuthor();
                 break;
             }
+            case 3: {
+                privatePolicy();
+                break;
+            }
         }
     }
 
+    /**
+     * thumbs up app in app stores
+     */
     private void likeOurApps() {
         try {
             Uri uri = Uri.parse("market://details?id=" + getPackageName());
@@ -108,6 +117,9 @@ public class AboutActivity extends BaseActivity implements BaseListAdapter.OnIte
         }
     }
 
+    /**
+     * donate to developer
+     */
     private void encouragementForAuthor() {
         new AlertDialog.Builder(this)
                 .setView(R.layout.encouragement_for_author_dialog_layout)
@@ -116,6 +128,9 @@ public class AboutActivity extends BaseActivity implements BaseListAdapter.OnIte
                 .show();
     }
 
+    /**
+     * invoke default mailbox to write email to developer
+     */
     private void contactAuthor() {
         try {
             Uri uri = Uri.parse("mailto:bjf13609846991@gmail.com");
@@ -131,6 +146,18 @@ public class AboutActivity extends BaseActivity implements BaseListAdapter.OnIte
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
 
+    /**
+     * open private policy page
+     */
+    private void privatePolicy() {
+        if (!OSUtil.isNetworkAvailable()) {
+            Toast.makeText(CApplication.getAppContext(), R.string.open_network, Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        Intent intent = new Intent(AboutActivity.this, PrivatePolicyActivity.class);
+        startActivity(intent);
     }
 }

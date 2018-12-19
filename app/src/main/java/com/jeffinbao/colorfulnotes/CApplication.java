@@ -1,6 +1,7 @@
 package com.jeffinbao.colorfulnotes;
 
 import android.app.Application;
+import android.content.Context;
 
 import com.evernote.client.android.EvernoteSession;
 
@@ -12,11 +13,13 @@ public class CApplication extends Application {
 
     private static final String EVERNOTE_CONSUMER_KEY = "";
     private static final String EVERNOTE_CONSUMER_SECRET = "";
+    private static Context appContext;
 
     @Override
     public void onCreate() {
         super.onCreate();
         buildEvernoteSession();
+        appContext = getApplicationContext();
     }
 
     private void buildEvernoteSession() {
@@ -33,5 +36,9 @@ public class CApplication extends Application {
                 .setSupportAppLinkedNotebooks(false)
                 .build(EVERNOTE_CONSUMER_KEY, EVERNOTE_CONSUMER_SECRET)
                 .asSingleton();
+    }
+
+    public static Context getAppContext() {
+        return appContext;
     }
 }

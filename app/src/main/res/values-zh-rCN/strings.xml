@@ -23,6 +23,7 @@
         <item>给应用点赞</item>
         <item>随意打赏</item>
         <item>联系作者吐槽</item>
+        <item>隐私政策</item>
     </array>
 
     <array name="reset_question_list">
@@ -41,6 +42,7 @@
     <string name="give_up">放弃</string>
     <string name="save">保存</string>
     <string name="turn_on_network">为了定位的准确性,请打开网络</string>
+    <string name="open_network">网络不可用</string>
     <string name="about">关于</string>
     <string name="encouragement_random_money">觉得不错，随意打赏.</string>
     <string name="install_mail_app_first">请先安装邮箱应用!</string>

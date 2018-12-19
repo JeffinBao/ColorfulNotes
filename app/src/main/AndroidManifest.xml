@@ -74,6 +74,10 @@
 
         </activity>
 
+        <activity android:name=".ui.PrivatePolicyActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
         <activity android:name="com.evernote.client.android.EvernoteOAuthActivity" />
         <activity android:name="com.evernote.client.android.login.EvernoteLoginActivity"/>
 

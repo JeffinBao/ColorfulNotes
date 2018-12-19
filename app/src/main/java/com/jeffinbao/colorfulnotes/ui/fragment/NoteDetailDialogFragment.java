@@ -148,7 +148,12 @@ public class NoteDetailDialogFragment extends BaseDialogFragment implements View
     }
 
     private void startGetLocationTask() {
-        if (!OSUtil.isNetWorkAvailable(getActivity())) {
+//        if (!OSUtil.isNetWorkAvailable(getActivity())) {
+//            Toast.makeText(getActivity().getApplicationContext(), R.string.turn_on_network, Toast.LENGTH_SHORT).show();
+//            return;
+//        }
+
+        if (!OSUtil.isNetworkAvailable()) {
             Toast.makeText(getActivity().getApplicationContext(), R.string.turn_on_network, Toast.LENGTH_SHORT).show();
             return;
         }

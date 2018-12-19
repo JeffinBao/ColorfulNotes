@@ -22,6 +22,7 @@
         <item>Like ColorfulNotes</item>
         <item>Sponsor Developer</item>
         <item>Contact Developer</item>
+        <item>Private Policy</item>
     </array>
 
     <array name="reset_question_list">
@@ -40,6 +41,7 @@
     <string name="give_up">Abandon</string>
     <string name="save">Save</string>
     <string name="turn_on_network">Please turn on network for better locating performance</string>
+    <string name="open_network">Network not available</string>
     <string name="about">About</string>
     <string name="encouragement_random_money">Sponsor developer if you like</string>
     <string name="install_mail_app_first">Please install mail app first</string>
