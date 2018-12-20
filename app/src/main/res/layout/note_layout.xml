@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/note_layout"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="96dp"
+    android:layout_height="wrap_content"
     android:layout_marginLeft="8dp"
     android:layout_marginRight="8dp"
     android:layout_marginTop="8dp"
@@ -28,7 +28,6 @@
             android:layout_marginLeft="8dp"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:text="标题"
             android:textSize="18sp"
             android:textColor="@color/black_transparency_87"/>
 
@@ -52,10 +51,8 @@
         android:layout_below="@id/note_title_plus_more"
         android:layout_marginLeft="8dp"
         android:maxLines="2"
-        android:text="内容提示"
         android:textSize="14sp"
         android:textColor="@color/black_transparency_87"/>
-
 
     <TextView
         android:id="@+id/note_last_update_time"

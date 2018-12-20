@@ -99,9 +99,11 @@ public class NoteAdapter extends BaseRecyclerViewAdapter<Note, NoteAdapter.ViewH
         }
 
         holder.noteLastUpdateTime.setText(context.getString(R.string.note_last_update_time, note.getLastUpdateTime()));
-        if (null != note.getCreateLocation()) {
+        if (null != note.getCreateLocation() && !note.getCreateLocation().isEmpty()) {
             holder.noteCreateLocation.setVisibility(View.VISIBLE);
             holder.noteCreateLocation.setText(context.getString(R.string.note_create_location, note.getCreateLocation()));
+        } else {
+            holder.noteCreateLocation.setVisibility(View.GONE);
         }
     }
 

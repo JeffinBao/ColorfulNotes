@@ -631,10 +631,6 @@ public class NoteActivity extends BaseActivity implements View.OnClickListener,
     }
 
     private void startGetLocationTask() {
-//        if (!OSUtil.isNetWorkAvailable(context)) {
-//            return;
-//        }
-
         if (!OSUtil.isNetworkAvailable()) return;
 
         locationClient = new AMapLocationClient(getApplicationContext());
