@@ -16,13 +16,13 @@ android {
 
     defaultConfig {
         applicationId "com.jeffinbao.colorfulnotes"
-        minSdkVersion 21
+        minSdkVersion 16
         targetSdkVersion 28
-        versionCode 100
-        versionName "1.0.0"
+        versionCode 110
+        versionName "1.1.0"
 
         //umeng default channel
-        manifestPlaceholders = [UMENG_CHANNEL_VALUE: "cn_test"]
+        manifestPlaceholders = [UMENG_CHANNEL_VALUE: "umeng"]
     }
 
     signingConfigs {
@@ -43,55 +43,50 @@ android {
             signingConfig signingConfigs.debug
         }
         release {
-            buildConfigField("boolean", "LOG_DEBUG", "true")
+            buildConfigField("boolean", "LOG_DEBUG", "false")
             zipAlignEnabled true
             minifyEnabled false
             signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
-//            applicationVariants.all { variant ->
-//                variant.outputs.each { output ->
-//                    def outputFile = output.outputFile
-//                    if (null != outputFile && outputFile.name.endsWith('.apk')) {
-//                        def fileName = "CN_V${defaultConfig.versionName}_${variant.productFlavors[0].name}.apk"
-//                        output.outputFile = new File(outputFile.parent, fileName)
-//                    }
-//                }
-//            }
+            applicationVariants.all { variant ->
+                variant.outputs.all { output ->
+                    outputFileName = "cn_${defaultConfig.versionName}_${variant.flavorName}.apk"
+                }
+            }
         }
     }
 
-    flavorDimensions "test", "channel"
+    flavorDimensions "channel"
 
     productFlavors {
-        cn_test {
-            dimension "test"
-        }
-        cn_wandoujia {
+        smartisan {
             dimension "channel"
         }
-        cn_smartisan {
+        xiaomi {
             dimension "channel"
         }
-        cn_xiaomi {
+        huawei {
             dimension "channel"
         }
-        cn_huawei {
+        meizu {
             dimension "channel"
         }
-        cn_meizu {
+        googleplay {
             dimension "channel"
         }
-        cn_googleplay {
+        alibaba {
+            dimension "channel"
+        }
+        tencent {
             dimension "channel"
         }
     }
 
-    productFlavors {
-        productFlavors.all { flavor ->
-            flavor.manifestPlaceholders = [UMENT_CHANNEL_VALUE: name]
-        }
+    productFlavors.all {
+        flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
     }
+
 }
 
 dependencies {
@@ -103,5 +98,6 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
     implementation 'de.greenrobot:eventbus:3.0.0-beta1'
     implementation 'com.evernote:android-sdk:2.0.0-RC3'
-    implementation 'com.umeng.analytics:analytics:latest.integration'
+    implementation 'com.umeng.umsdk:analytics:7.5.4'
+    implementation 'com.umeng.umsdk:common:1.5.4'
 }

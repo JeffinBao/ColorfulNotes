@@ -22,6 +22,7 @@ import java.util.List;
  * Date: 2015-10-20
  */
 public class NoteAdapter extends BaseRecyclerViewAdapter<Note, NoteAdapter.ViewHolder> {
+    private static final String TAG = "NoteAdapter";
 
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener, View.OnTouchListener {
         private TextView noteTitle;

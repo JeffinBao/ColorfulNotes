@@ -96,6 +96,7 @@ public class NoteActivity extends BaseActivity implements View.OnClickListener,
                 if (null != menuItemDone && menuItemDone.isVisible()) {
                     showNoteNotSaveDialog();
                 } else {
+                    opBeforeClosePage();
                     onBackPressed();
                 }
             }
@@ -355,27 +356,27 @@ public class NoteActivity extends BaseActivity implements View.OnClickListener,
     }
 
     private void saveNote() {
-        SoftKeyboardUtil.hideKeyboard(this);
-        menuItemDone.setVisible(false);
-        toggleEditText(false);
-        changedNoteBookList.clear();
-        changedNoteBookPositionMap.clear();
-
         if (!isEditTextEmpty(noteTitle)) {
-            note.setTitle(noteTitle.getText().toString());
+            String title = noteTitle.getText().toString().trim();
+            if (title.length() > 20) {
+                Toast.makeText(getApplicationContext(), getString(R.string.note_title_length_exceed_20), Toast.LENGTH_SHORT).show();
+                return;
+            }
+            note.setTitle(noteTitle.getText().toString().trim());
         } else {
             if (noteContent.getText().toString().length() <= 20) {
-                note.setTitle(noteContent.getText().toString());
+                note.setTitle(noteContent.getText().toString().trim());
             } else {
-                note.setTitle(noteContent.getText().toString().substring(0,21));
+                note.setTitle(noteContent.getText().toString().substring(0,21).trim());
             }
         }
 
         if (!isEditTextEmpty(noteContent)) {
-            note.setContent(noteContent.getText().toString());
+            note.setContent(noteContent.getText().toString().trim());
         } else {
-            note.setContent(noteTitle.getText().toString());
+            note.setContent(noteTitle.getText().toString().trim());
         }
+        Log.i(TAG, note.getContent());
 
         note.setNoteBookName(notebookName);
         note.setLastUpdateTime(TimeUtil.getCurrentTimeString());
@@ -423,7 +424,19 @@ public class NoteActivity extends BaseActivity implements View.OnClickListener,
 
         EventBus.getDefault().post(new NoteBookEvent(changedNoteBookList, changedNoteBookPositionMap, NoteBookEvent.NoteBookAction.UPDATE_NOTE_BOOK));
 
+        opBeforeClosePage();
         finish();
+    }
+
+    /**
+     * various reset operations before close an activity
+     */
+    private void opBeforeClosePage() {
+        SoftKeyboardUtil.hideKeyboard(this);
+        menuItemDone.setVisible(false);
+        toggleEditText(false);
+        changedNoteBookList.clear();
+        changedNoteBookPositionMap.clear();
     }
 
     private void updateNotebookCount(String name, int noteBookPosition) {
@@ -477,6 +490,7 @@ public class NoteActivity extends BaseActivity implements View.OnClickListener,
                 .setPositiveButton(R.string.give_up, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        opBeforeClosePage();
                         finish();
                     }
                 })
@@ -484,7 +498,6 @@ public class NoteActivity extends BaseActivity implements View.OnClickListener,
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         saveNote();
-                        finish();
                     }
                 });
 
@@ -609,10 +622,6 @@ public class NoteActivity extends BaseActivity implements View.OnClickListener,
             String titleAll = noteTitle.getText().toString();
             String contentAll = noteContent.getText().toString();
             if (!isEditTextEmpty(noteTitle) || !isEditTextEmpty(noteContent)) {
-                if (titleAll.length() > 20) {
-                    Toast.makeText(NoteActivity.this, getString(R.string.note_title_length_exceed_20), Toast.LENGTH_SHORT).show();
-                }
-
                 if ((TextUtils.equals(contentAll, note.getContent()) && TextUtils.equals(titleAll, note.getTitle())) &&
                         (null != originNotebookName && originNotebookName.equals(notebookName))) {
                     menuItemDone.setVisible(false);

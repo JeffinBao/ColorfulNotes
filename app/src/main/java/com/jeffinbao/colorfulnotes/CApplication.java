@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 
 import com.evernote.client.android.EvernoteSession;
+import com.umeng.commonsdk.UMConfigure;
 
 /**
  * Author: baojianfeng
@@ -20,6 +21,7 @@ public class CApplication extends Application {
         super.onCreate();
         buildEvernoteSession();
         appContext = getApplicationContext();
+        UMConfigure.init(appContext, UMConfigure.DEVICE_TYPE_PHONE, null);
     }
 
     private void buildEvernoteSession() {
