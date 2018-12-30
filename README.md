@@ -1,5 +1,7 @@
 # 多彩笔记(ColorfulNotes)
 
+[下载(Download)](https://play.google.com/store/apps/details?id=com.jeffinbao.colorfulnotes)
+
 内容(Contents)
 --------
 
