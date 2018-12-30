@@ -132,11 +132,11 @@ English Readme
 
 ### Where to Download?
 - [Google Play](https://play.google.com/store/apps/details?id=com.jeffinbao.colorfulnotes)
-- [Smartisan App Store]()
-- [Xiaomi App Store]()
-- [Huawei App Store]()
-- [Tencent App Store]()
-- [Alibaba App Store]()
+- Smartisan App Store
+- Xiaomi App Store
+- Huawei App Store
+- Tencent App Store
+- Alibaba App Store
 
 ### Thanks to
 - Afinal
