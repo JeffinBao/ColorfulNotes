@@ -134,9 +134,9 @@ English Readme
 - [Google Play](https://play.google.com/store/apps/details?id=com.jeffinbao.colorfulnotes)
 - Smartisan App Store
 - Xiaomi App Store
-- Huawei App Store
+- [Huawei App Store](https://a.vmall.com/grey/uowap/index.html#/detailApp/C10466989)
 - Tencent App Store
-- Alibaba App Store
+- [Alibaba App Store](https://www.wandoujia.com/apps/com.jeffinbao.colorfulnotes)
 
 ### Thanks to
 - Afinal
@@ -151,3 +151,4 @@ English Readme
 ### a Small Reminder
 
 I have excluded third party SDK key and screct, if you want to run the project, please apply for your own Evernote, UMeng and AMap developer keys.
+
