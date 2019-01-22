@@ -70,9 +70,9 @@
 - [Google Play](https://play.google.com/store/apps/details?id=com.jeffinbao.colorfulnotes)
 - 锤子应用商店
 - 小米应用商店
-- 华为应用市场
+- [华为应用市场](https://a.vmall.com/grey/uowap/index.html#/detailApp/C10466989)
 - 应用宝
-- 阿里应用分发渠道
+- [阿里应用分发渠道](https://www.wandoujia.com/apps/com.jeffinbao.colorfulnotes)
 
 ### 致谢
 - Afinal
